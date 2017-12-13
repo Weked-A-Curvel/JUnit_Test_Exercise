@@ -1,9 +1,9 @@
 package tests.bibliotecaUFMA;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import bibliotecaUFMA.DataControlClass;
 import bibliotecaUFMA.FuncionarioPanel;
@@ -12,15 +12,15 @@ import bibliotecaUFMA.biblioteca;
 import bibliotecaUFMA.contaUsuario;
 import bibliotecaUFMA.livro;
 import bibliotecaUFMA.usuario;
-
-public class FuncionarioPanelFunctionTest {
+	
+class FuncionarioPanelFunctionTest {
 	FuncionarioPanel funcionario;
 	FuncionarioPanelFunction funcao;
 	biblioteca b;
 	DataControlClass data;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() throws Exception {
 		b = new biblioteca();
 		funcionario = new FuncionarioPanel(b);
 		funcao = new FuncionarioPanelFunction();
@@ -36,19 +36,21 @@ public class FuncionarioPanelFunctionTest {
 	}
 
 	@Test//dar uma olhada nesse teste, implementei uma solucao mais falta testar com calma
-	public void testEmprestimoDeLivro() {	
+	void testEmprestimoDeLivro() {
+	
+		
 		assertTrue(funcao.emprestimoDeLivro(b, funcionario));
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testCalculaEmprestimos() {
+	void testCalculaEmprestimos() {
 		assertEquals(0, funcao.calculaEmprestimos(b));
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testAtualizarEmprestimos() {
+	void testAtualizarEmprestimos() {
 		assertTrue(funcao.atualizarEmprestimos(b));
 		//fail("Not yet implemented");
 	}

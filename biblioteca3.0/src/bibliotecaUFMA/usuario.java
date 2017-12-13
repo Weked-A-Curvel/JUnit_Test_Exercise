@@ -3,7 +3,7 @@ package bibliotecaUFMA;
 public class usuario extends pessoa {
   private boolean emprestar;//isto verificara se o usuario ainda pode emprstar ou nao livros
   
-  usuario(String nomeX, String sobrenomeX, long cpfX, conta contaX) {
+  public usuario(String nomeX, String sobrenomeX, long cpfX, conta contaX) {
 	super(nomeX, sobrenomeX, cpfX, contaX);
 	this.setEmprestar(true);
   }

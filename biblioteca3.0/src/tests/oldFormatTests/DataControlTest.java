@@ -1,19 +1,19 @@
 package tests.bibliotecaUFMA;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import bibliotecaUFMA.DataControlClass;
 import bibliotecaUFMA.biblioteca;
 
-public class DataControlTest {
+class DataControlTest {
 	DataControlClass control;
 	biblioteca b;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() throws Exception {
 		control = new DataControlClass();
 		b = new biblioteca();
 	}
@@ -22,50 +22,50 @@ public class DataControlTest {
 	//retorne true, ou seja o procedimento foi bem executado
 	
 	@Test
-	public void testCarregaDados() {
+	void testCarregaDados() {
 		assertNotNull(control.carregaDados(b));
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSalvaDados() {
+	void testSalvaDados() {
 		//ha uma nota sobre erro neste treco de codigo no arquivo datacontrolclass
 		assertTrue(control.salvaDados(b));
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testCarregaFuncionarios() {
+	void testCarregaFuncionarios() {
 		assertTrue(control.carregaFuncionarios());
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testCarregarLivros() {
+	void testCarregarLivros() {
 		assertTrue(control.carregarLivros());
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testCarregaUsuarios() {
+	void testCarregaUsuarios() {
 		assertTrue(control.carregaUsuarios());
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSalvarFuncionarios() {
+	void testSalvarFuncionarios() {
 		assertTrue(control.salvarFuncionarios(b));
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSalvarLivros() {
+	void testSalvarLivros() {
 		assertTrue(control.salvarLivros(b));
 		//fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSalvarUsuarios() {
+	void testSalvarUsuarios() {
 		assertTrue(control.salvarUsuarios(b));
 		//fail("Not yet implemented");
 	}

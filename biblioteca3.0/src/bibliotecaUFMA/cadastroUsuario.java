@@ -34,6 +34,8 @@ public class cadastroUsuario extends JPanel implements ActionListener{
 	  private SpringLayout layout;
 	  
 	  private biblioteca b;
+	  
+	  private CadastroUsuarioFunction function;
 		
 	  public cadastroUsuario(biblioteca x){
 		this.b = x;
@@ -61,6 +63,8 @@ public class cadastroUsuario extends JPanel implements ActionListener{
 		
 		btCadastro.addActionListener(this);
 		cadastro.setFont(new Font("Arial",0 , 18));
+		
+		function = new CadastroUsuarioFunction();
 		
 		this.add(cadastro);
 		this.add(nome);
@@ -141,11 +145,14 @@ public class cadastroUsuario extends JPanel implements ActionListener{
 			  System.out.println(senha);
 			  System.out.println(id);*/
 			  
-			  
+			  /////////////
+			  /*
 			  contaUsuario userAccount = new contaUsuario(senha, id);
 			  usuario user = new usuario(nome, sobrenome, cpf, userAccount);
 			  
 			  b.getUsuarios().put(id, user);
+			  */
+			  
 			  
 			 /* System.out.println(b.getUsuarios().size());
 			  for(int key : b.getUsuarios().keySet()){
@@ -156,7 +163,7 @@ public class cadastroUsuario extends JPanel implements ActionListener{
 				  System.out.println(b.getUsuarios().get(key).getConta().getSenha());
 			  }*/
 			  //JOptionPane.showMessageDialog(this, String.format("ta funcionando"));
-			  if(b.getUsuarios().put(id, user) != null){
+			  if(function.cadastro(b, senha, id, nome, sobrenome, cpf)){
 				  JOptionPane.showMessageDialog(this, String.format("Usuario Cadastrado com Sucesso!!!"));			
 				  campoNome.setText("");
 				  campoSobrenome.setText("");

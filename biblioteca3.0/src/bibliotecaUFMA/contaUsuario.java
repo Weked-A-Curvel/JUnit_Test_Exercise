@@ -6,7 +6,7 @@ public class contaUsuario extends conta {
   private float debitos;
   private ArrayList <livro> emprestimos = new ArrayList <livro>();
 
-  contaUsuario(int senhaX, int idX) {
+  public contaUsuario(int senhaX, int idX) {
 	super(senhaX, idX);	
 	this.setDebitos(0.0f);
   }

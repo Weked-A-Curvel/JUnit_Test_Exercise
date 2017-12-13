@@ -38,6 +38,8 @@ public class DataControlClass {
 					this.salvarUsuarios(Biblioteca)) {
 			return true;
 		}
+		//na compilacao do teste um trecho de codigo errado ira persistir um erro para o teste
+		//return falsine;
 		return false;
 	}
 	

@@ -12,8 +12,8 @@ public class FuncionarioPanelFunction {
 		  int senha;
 		  //erro correcao//
 		  //capturar a excessao de ponteiro nulo
-		  //try {
-			 // if(b != null) { //testar se a biblioteca é nula, so esse nao garante a excessao
+		  try {
+			  if(b != null) { //testar se a biblioteca é nula, so esse nao garante a excessao
 				  	if(b.getLivros().get(ref).getQtd() > 0){	
 				  		id = Integer.parseInt(JOptionPane.showInputDialog("ID do Usuario: ")); 
 				  		senha = Integer.parseInt(JOptionPane.showInputDialog("Senha do Usuario: "));
@@ -44,10 +44,10 @@ public class FuncionarioPanelFunction {
 				  			return false;
 				  		}
 				  	}	
-			//	}
-		  //}catch(Exception excessao){
+				} //
+		  }catch(Exception excessao){//
 			  
-		  //}	
+		  }	//
 		  	return true;
 	}
 
