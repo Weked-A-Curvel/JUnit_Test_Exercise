@@ -16,28 +16,36 @@ public class DataControlClass {
 	HashMap <Integer,funcionario> funcionarios; 
 	
 	public biblioteca carregaDados(biblioteca Biblioteca) {
-		
-		if(this.carregaFuncionarios() && 
-				this.carregarLivros() && 
-					this.carregaUsuarios()) {
-		
-			Biblioteca.setFuncionarios(funcionarios);
-			Biblioteca.setLivros(livros);
-			Biblioteca.setUsuarios(usuarios);
-			
-			return Biblioteca;
-		}
+		try {
+			if(Biblioteca != null) {
+				if(this.carregaFuncionarios() && 
+						this.carregarLivros() && 
+							this.carregaUsuarios()) {
+				
+					Biblioteca.setFuncionarios(funcionarios);
+					Biblioteca.setLivros(livros);
+					Biblioteca.setUsuarios(usuarios);
+					
+					return Biblioteca;
+				}
+			}
+		}catch(Exception e) {}
 		
 		return null;
 	}
 	
 	public boolean salvaDados(biblioteca Biblioteca) {
 		
-		if (this.salvarFuncionarios(Biblioteca) && 
-				this.salvarLivros(Biblioteca) &&
-					this.salvarUsuarios(Biblioteca)) {
-			return true;
-		}
+		try {
+			if(Biblioteca != null) {
+				if (this.salvarFuncionarios(Biblioteca) && 
+						this.salvarLivros(Biblioteca) &&
+							this.salvarUsuarios(Biblioteca)) {
+					return true;
+				}
+			}
+		}catch(Exception e) {}
+		
 		//na compilacao do teste um trecho de codigo errado ira persistir um erro para o teste
 		//return falsine;
 		return false;

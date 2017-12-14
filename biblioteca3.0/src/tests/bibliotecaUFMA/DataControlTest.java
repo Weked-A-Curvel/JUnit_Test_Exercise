@@ -24,50 +24,56 @@ public class DataControlTest {
 	@Test
 	public void testCarregaDados() {
 		assertNotNull(control.carregaDados(b));
-		//fail("Not yet implemented");
+		
+		b = null;
+		
+		assertNull(control.carregaDados(b));
 	}
 
 	@Test
 	public void testSalvaDados() {
 		//ha uma nota sobre erro neste treco de codigo no arquivo datacontrolclass
 		assertTrue(control.salvaDados(b));
-		//fail("Not yet implemented");
+		
+		b = null;
+		
+		assertFalse(control.salvaDados(b));		
 	}
 
 	@Test
 	public void testCarregaFuncionarios() {
 		assertTrue(control.carregaFuncionarios());
-		//fail("Not yet implemented");
+
 	}
 
 	@Test
 	public void testCarregarLivros() {
 		assertTrue(control.carregarLivros());
-		//fail("Not yet implemented");
+
 	}
 
 	@Test
 	public void testCarregaUsuarios() {
 		assertTrue(control.carregaUsuarios());
-		//fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSalvarFuncionarios() {
 		assertTrue(control.salvarFuncionarios(b));
-		//fail("Not yet implemented");
+
 	}
 
 	@Test
 	public void testSalvarLivros() {
 		assertTrue(control.salvarLivros(b));
-		//fail("Not yet implemented");
+
 	}
 
 	@Test
 	public void testSalvarUsuarios() {
 		assertTrue(control.salvarUsuarios(b));
-		//fail("Not yet implemented");
+
 	}
 
 }

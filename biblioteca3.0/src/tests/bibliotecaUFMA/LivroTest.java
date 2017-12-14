@@ -27,12 +27,19 @@ public class LivroTest {
 		exemplar.setDiasEmpres(-1);
 		
 		assertEquals(debito, exemplar.gerarMulta());
-		exemplar.setDiasEmpres(3);
+		
+		debito = 1.50f;
+		
+		exemplar.setDiasEmpres(-3);
+		
+		assertEquals(debito, exemplar.gerarMulta());
 		
 		//gerara falha, mas a falha aqui esta na forma de proceder com o teste
 		//assertEquals(debito, exemplar.gerarMulta());
 		
 		//maneira correta de gerar os testes
+		exemplar.setDiasEmpres(3);
+		
 		assertNotEquals(debito, exemplar.gerarMulta());
 		
 	}

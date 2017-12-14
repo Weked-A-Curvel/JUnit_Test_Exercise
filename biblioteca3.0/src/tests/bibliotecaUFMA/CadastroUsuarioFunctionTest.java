@@ -33,7 +33,7 @@ public class CadastroUsuarioFunctionTest {
 	@Test
 	public void testCadastro() {
 		assertTrue(funcao.cadastro(b, senha, id, nome, sobrenome, cpf));
-		//fail("Not yet implemented");
+
 		senha = 2;
 		id = 2;
 		
