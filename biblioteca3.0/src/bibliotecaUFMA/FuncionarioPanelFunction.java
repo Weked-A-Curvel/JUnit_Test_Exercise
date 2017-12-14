@@ -55,25 +55,32 @@ public class FuncionarioPanelFunction {
 		//int idTemp;
 		int emprestimosTotal = 0;
 		contaUsuario contaTmp;
-		 
-		for(int key : b.getUsuarios().keySet()){
-		  //idTemp = (1001+i);
-		  contaTmp = (contaUsuario) b.getUsuarios().get(key).getConta();
-		  emprestimosTotal += contaTmp.getEmpretimos().size();
-		}
+		
+		try {
+			if(b != null) {
+				for(int key : b.getUsuarios().keySet()){
+					  //idTemp = (1001+i);
+					  contaTmp = (contaUsuario) b.getUsuarios().get(key).getConta();
+					  emprestimosTotal += contaTmp.getEmpretimos().size();
+					}
+			}
+		}catch(Exception e) {}
 		
 		return emprestimosTotal;
 	}
 	
 	public boolean atualizarEmprestimos(biblioteca b) {
-		if(b != null) {
-			for(int key : b.getUsuarios().keySet()){
-				contaUsuario conta = (contaUsuario)b.getUsuarios().get(key).getConta();
-				conta.atualizarEmprestimos();
-				b.getUsuarios().get(key).setConta(conta);
+		try {
+			if(b != null) {
+				for(int key : b.getUsuarios().keySet()){
+					contaUsuario conta = (contaUsuario)b.getUsuarios().get(key).getConta();
+					conta.atualizarEmprestimos();
+					b.getUsuarios().get(key).setConta(conta);
+				}
+				return true;
 			}
-			return true;
-		}
+		}catch(Exception e) {}		
+
 		return false;
 	}
 }

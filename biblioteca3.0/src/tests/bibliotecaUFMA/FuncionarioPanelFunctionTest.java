@@ -38,19 +38,35 @@ public class FuncionarioPanelFunctionTest {
 	@Test//dar uma olhada nesse teste, implementei uma solucao mais falta testar com calma
 	public void testEmprestimoDeLivro() {	
 		assertTrue(funcao.emprestimoDeLivro(b, funcionario));
-		//fail("Not yet implemented");
+		
+
 	}
 
 	@Test
 	public void testCalculaEmprestimos() {
 		assertEquals(0, funcao.calculaEmprestimos(b));
-		//fail("Not yet implemented");
+		
+		//////criando apenas um teste de existencia de emprestimo
+		b.getUsuarios().put(1, new usuario("nome", "sobrenome", 005, 
+				new contaUsuario(1, 1)));
+		
+		contaUsuario conta = (contaUsuario)b.getUsuarios().get(1).getConta();
+		conta.getEmpretimos().add(new livro("titulo", "autor", 1, 1, 1));
+		b.getUsuarios().get(1).setConta(conta);		
+		///////
+		
+		//testando os emprestimos
+		assertEquals(1, funcao.calculaEmprestimos(b));
+
 	}
 
 	@Test
 	public void testAtualizarEmprestimos() {
 		assertTrue(funcao.atualizarEmprestimos(b));
-		//fail("Not yet implemented");
+		
+		b = null;
+		
+		assertFalse(funcao.atualizarEmprestimos(b));
 	}
 
 }

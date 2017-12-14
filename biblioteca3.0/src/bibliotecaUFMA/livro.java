@@ -78,7 +78,12 @@ public class livro {
   //metodos exclusivos desta classe em relacao ao cliente
   public float gerarMulta(){
 	if(this.getDiasEmpres() < 0){
-	  return 0.50f;
+	  //a retirada dessa variavel da mutiplicacao no retorno ira gerar um erro quase imperceptivel
+	  //que se trata do calculo de debitos mediante dias atrasados
+	  int atraso = 0;
+	  atraso = this.getDiasEmpres() * -1;
+		
+	  return 0.50f * atraso;
 	}  
     return 0.0f; 
   }
